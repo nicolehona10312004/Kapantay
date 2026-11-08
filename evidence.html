@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Evidence: statistics, laws, claims and sources | Kapantay</title>
+<meta name="description" content="Statistics on gender-based violence, Philippine laws, a claim check and every source, with a tool to find the law that applies to you.">
+<meta name="color-scheme" content="light dark">
+<script>try{var t=localStorage.getItem('kapantay.theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400..700;1,8..60,400..600&display=swap" rel="stylesheet">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="evidence">
+
+<div class="page">
+  <header class="page-head">
+    <h1>Evidence</h1>
+    <p class="lead">Statistics, the laws that protect people in the Philippines, a check on common claims, and every source behind them. Each number links to its reference.</p>
+  </header>
+
+  <div class="flex" style="justify-content:space-between;margin-bottom:.6rem">
+    <div class="chips" id="evTabs"></div>
+    <div class="search">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      <label class="sr" for="q">Search this tab</label>
+      <input class="input" id="q" type="search" placeholder="Search this tab" autocomplete="off">
+    </div>
+  </div>
+  <p class="note" id="resultCount" aria-live="polite" style="min-height:1.5em"></p>
+
+  <!-- ============ STATISTICS ============ -->
+  <section id="tab-statistics" aria-label="Statistics">
+    <div class="panel">
+      <h2>Data explorer</h2>
+      <div class="tabbed side">
+        <div class="tablist" id="exTabs"></div>
+        <div id="exPanel" role="tabpanel" aria-live="polite">
+          <h3 id="exTitle"></h3>
+          <p class="note" id="exDesc"></p>
+          <ol class="bars" id="bars"></ol>
+          <p class="insight" id="exInsight"></p>
+          <p class="src-line" id="exSrc"></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid-2 mt">
+      <div class="panel"><h2>Each dot is one woman</h2><div id="pictHost"></div></div>
+      <div class="panel">
+        <h2>Key findings</h2>
+        <div class="ledger" id="ledger"></div>
+      </div>
+    </div>
+    <p class="note mt prose">How to read these numbers: surveys ask different questions and cover different groups, so figures from different sources should not be compared directly. The 2022 Philippine survey covers women aged 15 to 49.<a class="cite" href="#r3">[3]</a> WHO notes that true prevalence is likely higher than reported because of stigma.<a class="cite" href="#r1">[1]</a></p>
+  </section>
+
+  <!-- ============ LAWS ============ -->
+  <section id="tab-laws" aria-label="Laws" hidden>
+    <div class="panel">
+      <div class="finder">
+        <fieldset id="finderOpts"><legend>Which law applies to me?</legend></fieldset>
+        <div class="result" id="finderResult" aria-live="polite"><p class="muted">Select a situation to see the relevant law and where to go. This is general information, not legal advice.</p></div>
+      </div>
+    </div>
+    <h2 class="mt2">Laws and treaties at a glance</h2>
+    <div class="chips" id="lawFilters" role="group" aria-label="Filter laws by topic" style="margin-bottom:1.2rem"></div>
+    <div id="lawList"></div>
+    <p class="note mt">Laws are summarised in plain language. For a specific case, ask the Public Attorney&rsquo;s Office, a women&rsquo;s desk or a lawyer.</p>
+  </section>
+
+  <!-- ============ CLAIMS ============ -->
+  <section id="tab-claims" aria-label="Claim check" hidden>
+    <p class="prose muted">Common beliefs about violence against women, tested against the sources. Open a claim to read the evidence.</p>
+    <div class="chips" id="verdictFilters" role="group" aria-label="Filter claims by verdict" style="margin:1rem 0 1.4rem"></div>
+    <div id="claimList"></div>
+  </section>
+
+  <!-- ============ SOURCES ============ -->
+  <section id="tab-sources" aria-label="Sources" hidden>
+    <p class="prose muted">Every statistic, law and claim on this site traces back to one of these references. Checked on 19 September 2026.</p>
+    <ol class="refs mt" id="refList"></ol>
+  </section>
+</div>
+
+<script src="js/app.js"></script>
+<script src="js/data.js"></script>
+<script src="js/charts.js"></script>
+<script src="js/pages/evidence.js"></script>
+</body>
+</html>

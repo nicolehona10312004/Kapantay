@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sign in | Kapantay, Gender and Society</title>
+<meta name="description" content="Sign in to Kapantay, a public-education platform on gender-based violence, equality and inclusion in the Philippines.">
+<meta name="color-scheme" content="light dark">
+<script>try{var t=localStorage.getItem('kapantay.theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400..700;1,8..60,400..600&display=swap" rel="stylesheet">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to sign-in form</a>
+
+<div class="auth">
+  <section class="auth-side" aria-label="About Kapantay">
+    <a class="brand" href="index.html" aria-label="Kapantay, Gender and Society">
+      <svg aria-hidden="true"><use href="#mark"/></svg>
+      <span class="brand-text"><span class="brand-name">Kapantay</span><span class="brand-sub">Gender &amp; Society</span></span>
+    </a>
+
+    <div>
+      <h1>Every person deserves to be safe and equal.</h1>
+      <p class="auth-desc">Kapantay is a public-education platform on gender-based violence in the Philippines. Learn what the evidence shows, which laws protect you, and how to act. In Filipino, <i>kapantay</i> means equal.</p>
+      <p><a href="help.html">Need help right now? See emergency numbers.</a> No sign-in needed.</p>
+    </div>
+
+    <div class="auth-vis">
+      <div class="auth-dots" id="authDots" aria-hidden="true"></div>
+      <p class="auth-caption" style="margin-top:1rem">Each dot is one woman. Worldwide, about 32 in 100 have experienced partner or sexual violence in their lifetime (WHO, 2023 estimates).</p>
+    </div>
+  </section>
+
+  <main class="auth-main" id="main">
+    <div class="auth-top">
+      <button class="icon-btn" id="themeBtn" type="button" aria-label="Switch color theme"></button>
+      <button class="quick-exit" id="quickExit" type="button" title="Leave this site immediately (or press Esc twice)">Quick exit</button>
+    </div>
+
+    <div class="auth-card">
+      <h2 id="authTitle">Welcome back</h2>
+      <p class="muted" id="authSub">Sign in to pick up your progress and action plan.</p>
+
+      <div class="auth-tabs" role="tablist" aria-label="Sign in or create account">
+        <button type="button" role="tab" id="tabIn" aria-selected="true" aria-controls="paneIn">Sign in</button>
+        <button type="button" role="tab" id="tabUp" aria-selected="false" aria-controls="paneUp" tabindex="-1">Create account</button>
+      </div>
+
+      <div id="formMsg" role="alert"></div>
+
+      <!-- Sign in -->
+      <div id="paneIn" role="tabpanel" aria-labelledby="tabIn">
+        <form id="formIn" novalidate>
+          <div class="field">
+            <label for="inEmail">Email</label>
+            <input class="input" id="inEmail" type="email" autocomplete="email" inputmode="email" required>
+            <p class="err" id="inEmailErr"></p>
+          </div>
+          <div class="field">
+            <label for="inPw">Password</label>
+            <div class="pw">
+              <input class="input" id="inPw" type="password" autocomplete="current-password" required>
+              <button type="button" data-toggle="inPw" aria-label="Show password">Show</button>
+            </div>
+            <p class="err" id="inPwErr"></p>
+          </div>
+          <div class="row">
+            <label><input type="checkbox" id="remember"> Keep me signed in</label>
+            <a href="#" id="forgot" style="font:600 .93rem var(--f-display)">Forgot password?</a>
+          </div>
+          <button class="btn btn-primary btn-block" type="submit" id="btnIn">Sign in</button>
+        </form>
+      </div>
+
+      <!-- Create account -->
+      <div id="paneUp" role="tabpanel" aria-labelledby="tabUp" hidden>
+        <form id="formUp" novalidate>
+          <div class="field">
+            <label for="upName">Your name</label>
+            <input class="input" id="upName" type="text" autocomplete="name" required>
+            <p class="err" id="upNameErr"></p>
+          </div>
+          <div class="field">
+            <label for="upEmail">Email</label>
+            <input class="input" id="upEmail" type="email" autocomplete="email" inputmode="email" required>
+            <p class="err" id="upEmailErr"></p>
+          </div>
+          <div class="field">
+            <label for="upPw">Password</label>
+            <div class="pw">
+              <input class="input" id="upPw" type="password" autocomplete="new-password" required aria-describedby="strengthTxt">
+              <button type="button" data-toggle="upPw" aria-label="Show password">Show</button>
+            </div>
+            <div class="strength" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+            <p class="strength-txt" id="strengthTxt">Use at least 8 characters.</p>
+            <p class="err" id="upPwErr"></p>
+          </div>
+          <div class="field">
+            <label for="upPw2">Confirm password</label>
+            <input class="input" id="upPw2" type="password" autocomplete="new-password" required>
+            <p class="err" id="upPw2Err"></p>
+          </div>
+          <div class="field">
+            <label class="row" style="justify-content:flex-start;align-items:flex-start;margin:0;font-weight:500;line-height:1.4">
+              <input type="checkbox" id="upAgree" style="margin-top:.2rem">
+              <span>I understand this is a demo. My account is stored only in this browser and is not protected like a real service.</span>
+            </label>
+            <p class="err" id="upAgreeErr"></p>
+          </div>
+          <button class="btn btn-primary btn-block" type="submit" id="btnUp">Create account</button>
+        </form>
+      </div>
+
+      <div class="divider">or</div>
+      <button class="btn btn-ghost btn-block" type="button" id="btnGuest">Continue as guest</button>
+
+      <p class="fine">Kapantay runs entirely in your browser. Accounts, progress and action plans are saved on this device and never sent anywhere. Guest mode saves your progress on this device too. Do not reuse a real password. <a href="about.html#privacy">Read the privacy note</a> or <a href="#" id="resetDemo">reset demo data</a>.</p>
+    </div>
+  </main>
+</div>
+
+<script src="js/app.js"></script>
+<script src="js/pages/login.js"></script>
+</body>
+</html>

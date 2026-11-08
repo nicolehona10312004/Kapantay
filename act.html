@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Take action | Kapantay, Gender and Society</title>
+<meta name="description" content="How to support someone who discloses abuse, build a personal action plan and test your knowledge.">
+<meta name="color-scheme" content="light dark">
+<script>try{var t=localStorage.getItem('kapantay.theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400..700;1,8..60,400..600&display=swap" rel="stylesheet">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="act">
+
+<div class="page">
+  <header class="page-head">
+    <h1>Take action</h1>
+    <p class="lead">Ending violence takes laws, funding and services. It also takes ordinary people who know what to say and do. Start here.</p>
+  </header>
+
+  <nav class="subnav" id="subnav" aria-label="On this page">
+    <a href="#lives">If someone tells you</a><a href="#plan">Action plan</a><a href="#quiz">Quiz</a>
+  </nav>
+
+  <section class="section" id="lives" aria-labelledby="livesH">
+    <h2 id="livesH">If someone tells you about abuse</h2>
+    <p class="prose muted">WHO&rsquo;s first-line support approach is called LIVES.<a class="cite" href="evidence.html#r19">[19]</a> You do not need to be an expert. You need to be a safe person to tell.</p>
+    <ul class="lives mt" id="livesList"></ul>
+    <p class="note mt">Do not pressure anyone to leave, reconcile or report before they are ready. Barangay officials are not allowed to mediate cases under RA 9262, and neither should friends or family push it.<a class="cite" href="evidence.html#r10">[10]</a> <a href="help.html">See helplines and how to get a protection order.</a></p>
+  </section>
+
+  <section class="section" id="plan" aria-labelledby="planH">
+    <h2 id="planH">Build your action plan</h2>
+    <p class="prose muted">Tick what you will do. Your plan is saved on this device and appears on the right.</p>
+    <div class="plan-grid mt">
+        <div id="planGroups"></div>
+        <aside class="panel sticky" aria-live="polite">
+          <h3>Your plan</h3>
+          <div class="meter" aria-hidden="true"><i id="planMeter"></i></div>
+          <p class="note" id="planCount" style="margin:0"></p>
+          <ul class="plan-list" id="planList"></ul>
+          <button class="btn btn-primary btn-block" id="copyPlan" type="button">Copy my plan</button>
+          <p class="status" id="planStatus" role="status"></p>
+        </aside>
+    </div>
+  </section>
+
+  <section class="section" id="quiz" aria-labelledby="quizH">
+    <h2 id="quizH">Test what you have learned</h2>
+    <p class="prose muted">Eight questions drawn from this site. Every answer links back to its source.</p>
+    <div class="panel mt" id="quizBox" style="max-width:46rem"></div>
+  </section>
+</div>
+
+<script src="js/app.js"></script>
+<script src="js/data.js"></script>
+<script src="js/charts.js"></script>
+<script src="js/pages/act.js"></script>
+</body>
+</html>

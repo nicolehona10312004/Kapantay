@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dashboard | Kapantay, Gender and Society</title>
+<meta name="description" content="Your Kapantay dashboard: key statistics on gender-based violence, your learning progress, and quick access to help.">
+<meta name="color-scheme" content="light dark">
+<script>try{var t=localStorage.getItem('kapantay.theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400..700;1,8..60,400..600&display=swap" rel="stylesheet">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="dashboard">
+
+<div class="page">
+  <div class="greet">
+    <div>
+      <h1 id="greeting">Welcome</h1>
+      <p class="lead muted mb0" id="subGreet">Here is where things stand on gender-based violence, and what you can do next.</p>
+    </div>
+    <a class="btn btn-orange" href="help.html">Get help now</a>
+  </div>
+
+  <div class="kpis" id="kpis"></div>
+
+  <div class="dash mt">
+    <!-- Data snapshot -->
+    <section class="panel c-8" aria-labelledby="snapH">
+      <h2 id="snapH">Data snapshot</h2>
+      <div class="chips" id="snapTabs"></div>
+      <div id="snapBody" style="margin-top:1.1rem"></div>
+    </section>
+
+    <!-- Progress -->
+    <section class="panel c-4" aria-labelledby="progH">
+      <h2 id="progH">Your progress</h2>
+      <div class="dn-wrap" style="margin-bottom:.8rem">
+        <div id="progDonut"></div>
+        <p class="note" id="progText" style="margin:0"></p>
+      </div>
+      <ul class="todo" id="todo"></ul>
+    </section>
+
+    <!-- Fact of the day -->
+    <section class="panel dark fact-panel c-5" aria-labelledby="factH">
+      <h2 id="factH">Did you know?</h2>
+      <p id="factText" style="font-size:1.2rem;line-height:1.5;min-height:5.5em"></p>
+      <button class="btn btn-ghost" id="nextFact" type="button" style="border-color:rgba(255,255,255,.35);color:#fff">Another fact</button>
+      <div class="thirds" aria-hidden="true"><i class="on"></i><i></i><i></i><span>1 in 3</span></div>
+    </section>
+
+    <!-- Next steps -->
+    <section class="panel c-7" aria-labelledby="nextH">
+      <h2 id="nextH">Where to next</h2>
+      <div id="resume"></div>
+      <dl class="rows" style="margin-top:1rem">
+        <div><dt><a href="issues.html">The issue</a></dt><dd>What gender-based violence is, who is most at risk, why it persists and what prevents it.</dd></div>
+        <div><dt><a href="evidence.html">Evidence</a></dt><dd>Statistics, Philippine laws, a claim check and every source, with a tool to find the law that applies to you.</dd></div>
+        <div><dt><a href="act.html">Take action</a></dt><dd>How to respond when someone tells you about abuse, a personal action plan and a quiz.</dd></div>
+      </dl>
+    </section>
+
+    <!-- Quick help -->
+    <section class="panel teal c-6" aria-labelledby="qhH">
+      <h2 id="qhH">Quick help</h2>
+      <p class="note">If you are in immediate danger, call 911.</p>
+      <ul class="lines compact" id="qhLines"></ul>
+      <p style="margin:1rem 0 0"><a href="help.html">All helplines and how to get a protection order</a></p>
+    </section>
+
+    <!-- Updates -->
+    <section class="panel c-6" aria-labelledby="updH">
+      <h2 id="updH">What&rsquo;s new</h2>
+      <ul class="upd" id="updates"></ul>
+    </section>
+  </div>
+</div>
+
+<script src="js/app.js"></script>
+<script src="js/data.js"></script>
+<script src="js/charts.js"></script>
+<script src="js/pages/dashboard.js"></script>
+</body>
+</html>
